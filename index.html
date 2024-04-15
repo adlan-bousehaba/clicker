@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'move-up': 'moveUp 2s ease-in-out'
+          },
+          keyframes: {
+            moveUp: {
+              '0%': { transform: 'translateY(0)' },
+              '100%': { transform: 'translateY(-100%)' },
+            }
+          }
+        }
+      },
+    }
+  </script>
+  
+  <title>Document</title>
+</head>
+<body>
+  <main class="h-screen w-screen bg-cover z-0" style="background-image: url(image/bg.jpg)">
+    
+  </main>
+  <footer class="flex flex-row items-center w-full h-10 bg-[#245DDA] fixed inset-x-0 bottom-0 z-50 ">
+    <section class="bg-[#13920D] h-full w-1/12 flex flex-row justify-start items-center pt-1  px-1 space-x-4 rounded-tr-lg">
+      <img src="image/logo2.png" class="h-8 w-8 shadow-xl">
+      <h1 class="text-white text-2xl italic font-bold">Start</h1>
+    </section>
+  </footer>
+  <script src="index.js"></script>
+  <script src="tailwind.config.js"></script>
+</body>
+</html>
