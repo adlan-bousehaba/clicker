@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'xp';
+      src: url('windows-xp-tahoma.ttf') format('truetype');
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -16,22 +22,76 @@
               '0%': { transform: 'translateY(0)' },
               '100%': { transform: 'translateY(-100%)' },
             }
-          }
+          },
+          fontFamily: {
+            'xp': ['xp', 'sans-serif']
         }
       },
     }
+  }
   </script>
   
   <title>Document</title>
 </head>
-<body>
+<body class="overflow-x-auto overflow-hidden">
   <main class="h-screen w-screen bg-cover z-0" style="background-image: url(image/bg.jpg)">
-    
+    <section class="grid grid-cols-4 grid-rows-3 h-full">
+      <div class="bg-red-500 col-start-4">
+        <h1 id="score"></h1>
+      </div>
+      <div class="bg-red-500 row-span-2 rounded-lg">
+        <div class="bg-[#1d5ac7] rounded-t-md border-2 h-20 p-4">
+          <h1 class="text-4xl text-white font-xp">Administrator</h1>
+        </div>
+        <section class="flex flex-col bg-white w-full h-full">
+          <div id="cursor-shop" class="flex flex-row justify-between items-center p-4 border relative">
+            <img src="image/mouse.png" class="w-16 h-16 animate-pulse">
+            <p class="h-full px-4  align-middle font-xp text-lg leading-4">Ce curseur, clique automatiquement sur le fond d'écran toutes les 5 secondes</p>
+            <h2 class="text-4xl font-xp font-bold ">80</h2>
+            <div id="cursor-lock" class="w-full h-full bg-gray-700 absolute top-0 left-0 opacity-75 ">
+          </div>
+          </div>
+          <div id="loader-shop" class="flex flex-row justify-between items-center p-4 border relative">
+            <img src="image/loader.png" class="w-16 h-16 animate-spin">
+            <p class="h-full px-4  align-middle font-xp text-lg leading-4">Ce curseur, clique automatiquement sur le fond d'écran toutes les 5 secondes</p>
+            <h2 class="text-4xl font-xp font-bold ">80</h2>
+            <div id="loader-lock" class="w-full h-full bg-gray-700 absolute top-0 left-0 opacity-75">
+            </div>
+          </div>
+          <div id="internet-explorer-shop" class="flex flex-row justify-between items-center p-4 border relative">
+            <img src="image/internet_explorer.png" class="w-16 h-16 animate-pulse">
+            <p class="h-full px-4  align-middle font-xp text-lg leading-4">Ce curseur, clique automatiquement sur le fond d'écran toutes les 5 secondes</p>
+            <h2 class="text-4xl font-xp font-bold ">80</h2>
+            <div id="internet-explorer-lock" class="w-full h-full bg-gray-700 absolute top-0 left-0 opacity-75">
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
   </main>
-  <footer class="flex flex-row items-center w-full h-10 bg-[#245DDA] fixed inset-x-0 bottom-0 z-50 ">
-    <section class="bg-[#13920D] h-full w-1/12 flex flex-row justify-start items-center pt-1  px-1 space-x-4 rounded-tr-lg">
+  <footer class="flex flex-row items-center justify-start  w-full h-10 bg-[#245DDA] fixed inset-x-0 bottom-0 z-50">
+    <section class="bg-[#13920D] h-full w-32 flex flex-row justify-start items-center pt-1  px-1 space-x-2 rounded-tr-lg rounded-br-3xl">
       <img src="image/logo2.png" class="h-8 w-8 shadow-xl">
-      <h1 class="text-white text-2xl italic font-bold">Start</h1>
+      <h1 class="text-white text-2xl italic font-bold mb-1">Start</h1>
+    </section>
+    <section class="w-1/12 bg-[#1858af] h-5/6 mx-2 rounded-md border-t-2 border-l-2 border border-gray-900 flex items-center">
+      <img src="image/mouse.png" class="h-6 w-6 animate-pulse">
+      <h1 class="text-white text-2xl italic font-xp ml-2">Cursor</h1>
+      <h1 class="text-white text-lg font-xp italic ml-auto mr-4">1</h1>
+    </section>
+    <section class="w-1/12 bg-[#1858af] h-5/6 mx-2 rounded-md border-t-2 border-l-2 border border-gray-900 flex items-center ">
+      <img src="image/loader.png" class="h-6 w-6 animate-spin">
+      <h1 class="text-white text-2xl italic font-xp ml-2">Loader</h1>
+      <h1 class="text-white text-lg font-xp italic ml-auto mr-4">1</h1>
+    </section>
+    <section class="w-1/12 bg-[#1858af] h-5/6 mx-2 rounded-md border-t-2 border-l-2 border border-gray-900 flex items-center">
+      <img src="image/internet_explorer.png" class="h-6 w-6 animate-pulse">
+      <h1 class="text-white text-lg font-xp italic ml-2">Internet Explorer</h1>
+      <h1 class="text-white text-lg font-xp italic ml-auto mr-4">1</h1>
+    </section>
+
+    <section class="w-1/12 bg-[#048ee9] h-full ml-auto ">
+      <h1 class="text-white text-2xl italic font-bold">Heure</h1>
     </section>
   </footer>
   <script src="index.js"></script>
